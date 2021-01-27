@@ -27,6 +27,6 @@ public class Account {
     }
 
     public List<OperationHistory> checkOperations() {
-        return null;
+        return List.of();
     }
 }
