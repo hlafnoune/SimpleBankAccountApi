@@ -18,4 +18,8 @@ public class Account {
     public void depoit(BigDecimal amount) {
         balance = Optional.ofNullable(balance).orElse(BigDecimal.ZERO).add(amount);
     }
+
+    public void withdrawal(BigDecimal amount) {
+
+    }
 }

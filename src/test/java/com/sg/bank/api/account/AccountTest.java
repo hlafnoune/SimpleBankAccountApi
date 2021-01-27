@@ -13,7 +13,7 @@ class AccountTest {
     private Account account = new Account();
 
     @Nested
-    class deposit {
+    class Deposit {
 
         @Test
         void should_make_deposit_in_the_account_when_the_initial_balance_is_null() {
@@ -26,6 +26,16 @@ class AccountTest {
             account.setBalance(BigDecimal.valueOf(300));
             account.depoit(BigDecimal.valueOf(100));
             assertThat(account.getBalance()).isEqualTo(BigDecimal.valueOf(400));
+        }
+    }
+
+    @Nested
+    class Withdrawal {
+
+        @Test
+        void should_make_withdrawal_from_the_account_when_the_initial_balance_is_null() {
+            account.withdrawal(BigDecimal.valueOf(100));
+            assertThat(account.getBalance()).isEqualTo(BigDecimal.valueOf(-100));
         }
     }
 
