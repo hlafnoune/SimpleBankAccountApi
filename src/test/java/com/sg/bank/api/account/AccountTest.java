@@ -37,6 +37,13 @@ class AccountTest {
             account.withdrawal(BigDecimal.valueOf(100));
             assertThat(account.getBalance()).isEqualTo(BigDecimal.valueOf(-100));
         }
+
+        @Test
+        void should_make_withdrawal_from_the_account_and_substruct_the_amount_from_the_existing_balance() {
+            account.setBalance(BigDecimal.valueOf(300));
+            account.withdrawal(BigDecimal.valueOf(100));
+            assertThat(account.getBalance()).isEqualTo(BigDecimal.valueOf(200));
+        }
     }
 
 
