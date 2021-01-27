@@ -20,6 +20,6 @@ public class Account {
     }
 
     public void withdrawal(BigDecimal amount) {
-        balance = amount.negate();
+        balance = Optional.ofNullable(balance).orElse(BigDecimal.ZERO).subtract(amount);
     }
 }
